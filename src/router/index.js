@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
+
 import App from '../../src/App.vue'
-import CrudTeste from '../../src/CrudTeste.vue'
+
 
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/crudteste',
     name: 'crudteste',
-    component: CrudTeste
+    component:() => import(/* webpackChunkName: "about" */ '../views/CrudTeste.vue')
   }
 ]
 

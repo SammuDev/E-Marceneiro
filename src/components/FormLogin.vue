@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-      <form>
+   <!--    <form>
         <label for="nome">Seu nick</label>
         <input
             type = "text"
@@ -17,17 +17,14 @@
             id=""
         >
       </form>
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button type="submit" class="btn btn-primary">Entrar</button> -->
     </div>
   </template>
 
 <script>
-//   import NavBar from './components/NavBar.vue'
+
 
 export default {
-    name: 'FormLogin'
-    // components: {
-    //   NavBar
-    // }
-    }
+}
+   
 </script>
