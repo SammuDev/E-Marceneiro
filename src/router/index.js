@@ -22,6 +22,33 @@ const routes = [
     path: '/crudteste',
     name: 'crudteste',
     component:() => import(/* webpackChunkName: "about" */ '../views/CrudTeste.vue')
+  },
+  {
+    path: '/clientview',
+    name: 'clientview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/ClientView.vue')
+  },
+  {
+    path: '/helpview',
+    name: 'helpview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/HelpView.vue')
+  },
+  {
+    path: '/orcview',
+    name: 'orcview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/OrcView.vue')
+  }
+  ,
+  {
+    path: '/productview',
+    name: 'productview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/ProductView.vue')
+  }
+  ,
+  {
+    path: '/loginview',
+    name: 'loginview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   }
 ]
 
