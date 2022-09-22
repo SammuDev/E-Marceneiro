@@ -1,14 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-
-
+// import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'loginview',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue') //HomeView
   },
   {
     path: '/about',
@@ -44,11 +41,17 @@ const routes = [
     name: 'productview',
     component:() => import(/* webpackChunkName: "about" */ '../views/ProductView.vue')
   }
+  // ,
+  // {
+  //   path: '/loginview',
+  //   name: 'loginview',
+  //   component:() => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+  // }
   ,
   {
-    path: '/loginview',
-    name: 'loginview',
-    component:() => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    path: '/homeview',
+    name: 'homeview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
   }
 ]
 
