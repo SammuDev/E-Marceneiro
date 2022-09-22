@@ -1,8 +1,8 @@
 <template>
   <div id="app" >
-    <NavBar menuTitle ="e-Marceneiro"/>
+    <NavBar v-if="$route.path!='/'" menuTitle ="e-Marceneiro"/>
     <router-view/>
-    <FooterBar msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
+    <FooterBar v-if="$route.path!='/'" msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
       copyright="2022"/>
     
   </div>
@@ -11,7 +11,9 @@
 
 <script>
  import NavBar from "./components/NavBar.vue";
-import FooterBar from "./components/FooterBar.vue";
+ import FooterBar from "./components/FooterBar.vue";
+ 
+
 
 export default {
   name: "App",

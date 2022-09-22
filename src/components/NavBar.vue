@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav px-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/homeview">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/orcview">Orçamentos</a>
@@ -29,7 +29,7 @@
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/loginview">Login</a>
+                            <a class="nav-link" href="/">Sair</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/helpview">Ajuda</a>
