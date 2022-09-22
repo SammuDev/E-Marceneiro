@@ -1,6 +1,6 @@
 <template>
     <!-- <div id="navbar"> -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow">
             <div class="container">
 
                 <a class="navbar-brand" href="/">
@@ -17,22 +17,22 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Orçamentos</a>
+                            <a class="nav-link" href="/orcview">Orçamentos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Clientes</a>
+                            <a class="nav-link" href="/clientview">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Insumos</a>
+                            <a class="nav-link" href="/productview">Insumos</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Login</a>
+                            <a class="nav-link" href="/loginview">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Ajuda</a>
+                            <a class="nav-link" href="/helpview">Ajuda</a>
                         </li>
                     </ul>
                 </div>
