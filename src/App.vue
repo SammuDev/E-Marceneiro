@@ -1,8 +1,8 @@
 <template>
   <div id="app" >
-    <NavBar v-if="$route.path!='/'" menuTitle ="e-Marceneiro"/>
+    <NavBar  menuTitle ="e-Marceneiro"/>
     <router-view/>
-    <FooterBar v-if="$route.path!='/'" msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
+    <FooterBar msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
       copyright="2022"/>
     
   </div>
@@ -10,15 +10,11 @@
 </template>
 
 <script>
-<<<<<<< Updated upstream
+
  import NavBar from "./components/NavBar.vue";
  import FooterBar from "./components/FooterBar.vue";
  
 
-=======
-import NavBar from "./components/NavBar.vue";
-import FooterBar from "./components/FooterBar.vue";
->>>>>>> Stashed changes
 
 export default {
   name: "App",
