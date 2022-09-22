@@ -10,10 +10,15 @@
 </template>
 
 <script>
+<<<<<<< Updated upstream
  import NavBar from "./components/NavBar.vue";
  import FooterBar from "./components/FooterBar.vue";
  
 
+=======
+import NavBar from "./components/NavBar.vue";
+import FooterBar from "./components/FooterBar.vue";
+>>>>>>> Stashed changes
 
 export default {
   name: "App",
