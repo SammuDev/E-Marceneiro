@@ -1,8 +1,8 @@
 <template>
   <div id="app" >
-    <NavBar v-if="logged" menuTitle ="e-Marceneiro"/>
+    <NavBar v-if="$route.path!='/'" menuTitle ="e-Marceneiro"/>
     <router-view/>
-    <FooterBar v-if="logged" msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
+    <FooterBar v-if="$route.path!='/'" msg="Projeto de Bloco - Desenvolvimento FrontEnd - Cidclei Schmitt - Eng. de Software ( Anderson, Leonardo, Samuel, Edvaldo e Jorge)"
       copyright="2022"/>
     
   </div>
@@ -27,7 +27,7 @@ export default {
 },
   
   created() {
-    this.$route.name === { name: 'loginview'} ? !this.logged : this.logged
+    this.$route.name === { name: 'homeview'} ? !this.logged : this.logged
   }
 
  
