@@ -30,7 +30,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <!-- <router-link class="nav-link" to="/">Sair</router-link> -->
-                            <a class="nav-link" @click="logout">Sair</a>
+                             
+                            <a class="nav-link" @click="logout">Bem-vindo <strong>{{ nomeUsuario }}</strong>. [Sair]</a>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link" to="/helpview">Ajuda</router-link>
@@ -51,7 +52,11 @@ export default {
   props: {
         menuTitle: {}
   },
-
+  computed: {
+    nomeUsuario () {
+        return  this.$store.state.users.usuarios[this.$store.state.users.usrLogado-1].nome;
+    }
+  },
   methods: {
     logout() {
         this.$store.commit('USR_LOGOUT', -1);

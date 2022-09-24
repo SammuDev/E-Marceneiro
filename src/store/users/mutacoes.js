@@ -7,6 +7,14 @@ export default {
             }
         }    
     },
+    USR_ADD: (users, user) => {
+        let maiorId = 0;
+        for (let lUser of users.usuarios) {
+            maiorId = lUser.id + 1;
+        }
+        user.id = maiorId;
+        users.usuarios.push(user);
+    },
     USR_LOGOUT: (users, id) => {
         users.usrLogado = id;
     }
