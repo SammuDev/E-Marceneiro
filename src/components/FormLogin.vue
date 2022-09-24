@@ -2,7 +2,7 @@
     <div class="login">
       <div class="areaLoginTop">
         <h1>e-Marceneiro</h1>
-        <p>Somos uma plataforma perfeita para gerenciar seus orçamentos e clientes.</p>
+        <p> {{ inptNome }} {{ inptPass}} Somos uma plataforma perfeita para gerenciar seus orçamentos e clientes.</p>
         <p><strong>Teste gratuaitamente por 30 dias!</strong></p>
       </div>
       <form>
@@ -12,6 +12,7 @@
             class = "form-control"
             id = "nome"
             placeholder="Digite aqui seu nome"
+            v-model="inptNome"
         />
         <label for="password">Senha:</label>
         <input 
@@ -20,10 +21,11 @@
             name="password" 
             placeholder="Digite aqui seu nome"
             id=""
+            v-model="inptPass"
         >
       </form>
-      <button type="button" class="btn btn-primary" onclick="location.href='/homeview'">Entrar</button>
-      <div class="areaLoginRodape">
+      <button type="button" class="btn btn-primary" v-on:click="logar()" >Entrar</button>
+      <div class="areaLoginRodape"> 
         <small>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur perspiciatis nam architecto tempora magni iure aliquam ipsa distinctio sint, rerum sapiente dolores? Distinctio nam placeat itaque quo in a nisi.
         </small>
@@ -34,6 +36,24 @@
 <script>
 export default {
   name: "FormLogin",
+  data: () => ({
+    inptNome: '',
+    inptPass: ''
+  }),
+  // computed: {
+  //   teste () {
+  //     return this.$store.state.users;//.usuarios;
+  //   }
+  // },
+  methods: {
+    logar() {
+      if ((this.inptNome != '') && (this.inptPass != '')) {
+        let lUsr= { nome : this.inptNome, senha: this.inptPass };
+        this.$store.commit('USR_LOGIN', lUsr);
+        this.$router.replace('/homeview');
+      }
+    }
+  }
 }
   
 </script>

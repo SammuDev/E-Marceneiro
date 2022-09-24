@@ -14,25 +14,26 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav px-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="/homeview">Home</a>
+                            <router-link class="nav-link" to="/homeview">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/orcview">Orçamentos</a>
+                            <router-link class="nav-link" to="/orcview">Orçamentos</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/clientview">Clientes</a>
+                            <router-link to="/clientview" class="nav-link">Clientes</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/productview">Insumos</a>
+                            <router-link class="nav-link" to="/productview">Insumos</router-link>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Sair</a>
+                            <!-- <router-link class="nav-link" to="/">Sair</router-link> -->
+                            <a class="nav-link" @click="logout">Sair</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/helpview">Ajuda</a>
+                            <router-link class="nav-link" to="/helpview">Ajuda</router-link>
                         </li>
                     </ul>
                 </div>
@@ -47,9 +48,16 @@
 
 export default {
 
-    props: {
+  props: {
         menuTitle: {}
+  },
+
+  methods: {
+    logout() {
+        this.$store.commit('USR_LOGOUT', -1);
+        this.$router.replace('/');
     }
+  }
 }
 </script>
 
