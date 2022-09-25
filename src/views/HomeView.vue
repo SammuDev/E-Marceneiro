@@ -25,7 +25,7 @@
             <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card  mx-3">
           <img class="card-img-top" src="../assets/brand/Carpinteiro.jpg" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
