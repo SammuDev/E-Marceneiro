@@ -3,16 +3,16 @@
       <div class="areaLoginTop">
         <h1>e-Marceneiro</h1>
         <p>Somos uma plataforma perfeita para gerenciar seus orçamentos e clientes.</p>
-        <p><strong>Teste gratuaitamente por 30 dias!</strong></p>
+        <p><strong>Teste gratuitamente por 30 dias!</strong></p>
       </div>
-      <form>
+      <form class="mb-3">
         <div v-if="emCadastramento==false">
-          <h1>Logar</h1>
+          <h1>Login</h1>
         </div>
         <div v-else>
           <h1>Cadastrar</h1>
         </div>
-        <label for="nome">Seu nick</label>
+        <label for="nome">Nome</label>
         <input
             type = "text"
             class = "form-control"
@@ -21,8 +21,8 @@
             v-model="inptNome"
             required
         />
-        <div v-if="emCadastramento==true">
-          <label for="email" >Seu e-mail</label>
+        <div  v-if="emCadastramento==true" >
+          <label for="email"  >Seu e-mail</label>
           <input
               type = "email"
               class = "form-control"
@@ -42,10 +42,10 @@
             required
         >
       </form>
-      <button v-if="emCadastramento==false" type="button" class="btn btn-primary" v-on:click="logar()" >Entrar</button>
-      <button v-else type="button" class="btn btn-primary" v-on:click="cadastrar()" >Cadastrar</button>
-      <div v-if="emCadastramento==false">
-        Não tem senha? <a @click="mudarFase()" class="link-secondary">Cadastrar-se</a> já!
+      <button  v-if="emCadastramento==false" type="button" class="btn btn-primary" @click="logar()" >Entrar</button>
+      <button v-else type="button" class="btn btn-primary" @click="cadastrar()" >Cadastrar</button>
+      <div class="mt-3" v-if="emCadastramento==false">
+        Não tem senha? <a @click="mudarFase()" class="link-secondary ">Cadastrar-se</a> já!
       </div>
       <div v-else>
         Voltar para o <a @click="mudarFase()" class="link-secondary">Login</a>
