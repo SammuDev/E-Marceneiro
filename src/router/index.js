@@ -34,8 +34,17 @@ const routes = [
     path: '/orcview',
     name: 'orcview',
     component:() => import(/* webpackChunkName: "about" */ '../views/OrcView.vue')
-  }
-  ,
+  },
+  {
+    path: '/adorcview',
+    name: 'adorcview',
+    component:() => import(/* webpackChunkName: "about" */ '../views/AdOrcView.vue')
+  },
+  {
+    path: '/ambienteorc',
+    name: 'ambienteorc',
+    component:() => import(/* webpackChunkName: "about" */ '../views/AmbienteOrc.vue')
+  },
   {
     path: '/productview',
     name: 'productview',

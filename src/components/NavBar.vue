@@ -20,6 +20,12 @@
                             <router-link class="nav-link" to="/orcview">Orçamentos</router-link>
                         </li>
                         <li class="nav-item">
+                            <router-link class="nav-link" to="/adorcview">AddOrçamentos</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/ambienteorc">Ambiente</router-link>
+                        </li>
+                        <li class="nav-item">
                             <router-link to="/clientview" class="nav-link">Clientes</router-link>
                         </li>
                         <li class="nav-item">
