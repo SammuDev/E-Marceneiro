@@ -26,7 +26,7 @@
                             <router-link class="nav-link" to="/ambienteorc">Ambiente</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/clientview" class="nav-link">Clientes</router-link>
+                            <router-link to="/clientsview" class="nav-link">Clientes</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link class="nav-link" to="/productview">Insumos</router-link>
