@@ -2,12 +2,12 @@
     <section class="container">
         <div class="row margin">
         <div class="col-md-8 col-sm-0">
-        <h3 class="jumbotron">Insumos:{{produtos}}</h3>
+        <h3 class="jumbotron">Insumos:</h3>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nome</th>
+                    <th scope="col">Produto</th>
                     <th scope="col">Fabricante</th>
                     <th scope="col">Unidade</th>
                     <th scope="col">Preço</th>
@@ -68,8 +68,9 @@
 export default ({
   computed: {
     produtos () {
-        this.$store.commit('PRD_OBTEMLISTA', this.$store.state.produtos.data().lista);
-        return this.$store.state.produtos.data().lista;//  this.$store.state.produtos.produtos;
+        this.$store.commit('PRD_OBTEMLISTA', this.$store.state.produtos);//.data().lista);
+        return this.$store.state.produtos.lista;
+        // return this.$store.state.produtos.data().lista;
     }
   }
 })
