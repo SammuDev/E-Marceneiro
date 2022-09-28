@@ -4,6 +4,7 @@ export default {
     PRD_OBTEMLISTA: async (produtos) => {
         produtos.limpa();
         const lRetornoDaApi = await api_products.obtemProdutos();
+        console.log(lRetornoDaApi)
         for (let lCont=0;lCont<lRetornoDaApi.data.products.length;lCont++) {
             produtos.adiciona(
                 lRetornoDaApi.data.products[lCont].id,

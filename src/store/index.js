@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import clientes from './clientes/index'
+import Mclients from './clients/index'
 import produtos from './produtos/index'
 import users    from './users/index'
 // import data from './data'
@@ -15,7 +15,7 @@ import users    from './users/index'
 
 export default createStore({
   modules: {
-    clientes,
+    Mclients,
     produtos,
     users
   }
