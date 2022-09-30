@@ -77,11 +77,12 @@ export default {
         submitFormulario() {
             if (this.podeGravar()) {
                 this.$store.state.produtos.gravaItm(this.produto);
-                alert('Item Gravado');
+                // alert('Item Gravado');
+                this.$router.replace('/productview');
             }
         },
         submitCancel() {
-            this.$router.replace('/homeview');
+            this.$router.replace('/productview');
         }
     },
      mounted() {
