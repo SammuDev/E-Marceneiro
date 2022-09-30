@@ -1,5 +1,6 @@
 export default {
-    itemId: 0, // Indica o item que esta sendo editado
+    itemId: 0,            // Indica o item que esta sendo editado
+    qtdListaCarregada: 0, // Indica quantas vezes a lista foi populada por uma API externa, evitando assim o re-carregamento
     lista : [
         {"id": 1, "nome": "Madeira",    "fabricante": "",         "unidade": "m2", "preco": 100, "lnkImg":''},
         {"id": 2, "nome": "Cola 500ml", "fabricante": "cascorez", "unidade": "un", "preco": 5,   "lnkImg":''}
@@ -40,6 +41,13 @@ export default {
             this.lista.push(pProd);
         } else {
             this.lista[this.itemId]=pProd;
+        }
+    },
+
+    removeItm (pIdx) {
+        this.lista.splice(pIdx, 1);
+        if (pIdx == this.itemId) {
+            this.itemId = 0;
         }
     },
 
