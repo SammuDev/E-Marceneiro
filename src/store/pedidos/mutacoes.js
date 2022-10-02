@@ -1,4 +1,8 @@
 export default {
-    PEDIDOS_SALVAR: {},
-    PEDIDOS_CARREGAR: {}
+    PEDIDOS_SALVAR: ()=>{
+        return true;
+    },
+    PEDIDOS_CARREGAR: ()=>{
+        return true;
+    }
 }
