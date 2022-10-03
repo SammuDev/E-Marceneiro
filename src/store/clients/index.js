@@ -1,9 +1,12 @@
-import Mclients from "./dataClientes";
-import Cmutations from "./mutations";
+import Clients from "./dataClientes";
+import Mutations from "./mutations";
+
+
+
 export default {
-    state    : Mclients,
+    state    : Clients,
     getters  : { },
-    mutations: Cmutations,
+    mutations: Mutations,
     actions  : { },
     modules  : { }
   }

@@ -8,6 +8,7 @@
             class="form-control"
             :placeholder="placeHol"
             :aria-label="placeHol"
+            :value="tValue"
         >
             
    
@@ -17,7 +18,8 @@
 <script>
 export default {
     props: {
-        placeHol:{}
+        placeHol:{},
+        tValue:{}
     }
 
 };

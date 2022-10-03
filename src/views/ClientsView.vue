@@ -1,4 +1,5 @@
 <template>
+
     <section class="container">
         <div class="row margin">
             <div class="centered col-lg-8 col-md-12 table-responsive-xl py-3">
@@ -8,7 +9,7 @@
                         <label for="inputSearch" class="pe-2 "> Pesquisar :</label>
                         <input type="search" name="inputSearch" id="inputSearch" placeholder="Encontre um Cliente ..."
                             v-model="clientSearch" />
-                        <button class="btn btn-success btn-sm ms-3 ">
+                        <button @click="newClient" class="btn btn-success btn-sm ms-3 ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-person-plus" viewBox="0 0 16 16">
                                 <path
@@ -18,47 +19,6 @@
                             </svg> Novo Cliente
                         </button>
                     </div>
-
-                    <!-- <table class="table table-muted table-bordered table-striped table-hover table-sm ">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col" class=" col-lg-1 col-md-2 text-center">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="user in users" :key="user.id">
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.firstName }}</td>
-                        <td>{{ user.phone }}</td>
-                        <td>{{ user.email }}</td>
-                       
-                        <td class="text-center">
-                            <button type="button" class="btn btn-primary me-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-pencil-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z">
-                                    </path>
-                                </svg>
-                            </button>
-                            <button type="button" class="btn btn-danger">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path
-                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                </svg>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table> -->
-
                     <table class="table table-muted table-striped table-hover table-sm ">
                         <thead>
                             <tr>
@@ -71,14 +31,14 @@
                         </thead>
                         <tbody>
 
-                            <tr v-for="(Mclient, index) in findClients" :key="index">
+                            <tr v-for="(client, index) in findClients" :key="index">
 
-                                <td>{{ Mclient.id }}</td>
-                                <td>{{ Mclient.firstName }}</td>
-                                <td>{{ Mclient.phone }}</td>
-                                <td>{{ Mclient.email }}</td>
+                                <td>{{ client.id }}</td>
+                                <td>{{ client.firstName }}</td>
+                                <td>{{ client.phone }}</td>
+                                <td>{{ client.email }}</td>
                                 <td class="text-center">
-                                    <div class="btn btn-outline-primary alterar me-2">
+                                    <div class="btn btn-outline-primary me-2" @click="updateClient(index)">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
                                             <path
@@ -86,7 +46,7 @@
                                             </path>
                                         </svg>
                                     </div>
-                                    <div @click="deleteClient(index)" class="btn btn-outline-danger alterar">
+                                    <div class="btn btn-outline-danger " @click="deleteClient(index, client.firstName)">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path
@@ -110,41 +70,36 @@
 
 <script>
 
-import axios from "axios";
-
 export default ({
 
 
     data() {
         return {
-            users: [],
             clientSearch: ''
         };
     },
+
     methods: {
-        getUser() {
-            axios
-                .get("https://dummyjson.com/users")
-                .then((res) => {
-                    this.users = res.data.users;
-                    console.log(this.users)
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        },
-
-        deleteClient(index){
-            console.log(index)
-            this.$store.commit('DELETE_KEY', this.$store.state.Mclients, index)
-            delete this.$store.state.Mclients[index]
+        updateClient(clientId) {
+      this.$store.state.Clients.updateIndex(clientId);
+      this.$router.replace('/clientview:' + clientId);
+    },
+        deleteClient(index, name) {
+            delete this.$store.state.Clients.deleteClient(index)
+            if (confirm(`Deseja remover o item ${name}?`)) {
+                this.$store.state.produtos.removeItm(index);
+            }
 
         },
+
+        newClient() {
+            this.$router.replace('/clientview:' + "new");
+        }
     },
     computed: {
         findClients() {
             let local = this.clientSearch.toLowerCase();
-            return this.$store.state.Mclients.clientList.filter(
+            return this.$store.state.Clients.clientList.filter(
                 function (value) {
                     if ((local == '') ||
                         (value.firstName.toLowerCase().indexOf(local) >= 0) ||
@@ -155,11 +110,12 @@ export default ({
             );
         }
     },
-        
 
     mounted() {
         //this.getUser();
-        this.$store.commit('GETCLIENTS2', this.$store.state.Mclients);
+        if (this.$store.state.Clients.qtdclientListCarregada==0){
+        this.$store.commit('GETCLIENTS2', this.$store.state.Clients);
+        }
     }
 });
 </script>

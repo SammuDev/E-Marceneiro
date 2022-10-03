@@ -26,6 +26,11 @@ const routes = [
     component:() => import( '../views/ClientsView.vue')
   },
   {
+    path: '/clientview:clientId',
+    name: 'clientview',
+    component:() => import( '../views/ClientView.vue')
+  },
+  {
     path: '/helpview',
     name: 'helpview',
     component:() => import(/* webpackChunkName: "about" */ '../views/HelpView.vue')
