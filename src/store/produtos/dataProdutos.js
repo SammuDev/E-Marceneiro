@@ -54,4 +54,12 @@ export default {
     alteraIndice (pIdx) {
         this.itemId = pIdx-1;
     },
+
+    carregaItemPeloId (pId) {
+        for (let lCont=0; lCont<this.lista.length; lCont++) {
+            if (this.lista[lCont].id==pId) {
+                return this.lista[lCont];
+            }
+        }
+    }
 }

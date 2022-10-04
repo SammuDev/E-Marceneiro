@@ -8,7 +8,7 @@
         </div> -->
       <div class="card-group mt-4">
         <div class="card">
-          <img class="card-img-top" src="../assets/brand\regua.jpg" alt="Imagem de capa do card">
+          <img class="card-img-top" src="../assets/brand/regua.jpg" alt="Imagem de capa do card">
           <!-- <div class="card-body">
       <h5 class="card-title">Título do card</h5>
       <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior, para demonstração.</p>

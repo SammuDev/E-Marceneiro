@@ -7,7 +7,7 @@ export default {
          "userId"    : 1,
          "descricao" : 'Orçamento modelo',
          "data"      : '01/01/2022',
-         "produtos:" : [                             // Listagem dos itens que compoem este pedido fake
+         "produtos"  : [                             // Listagem dos itens que compoem este pedido fake
             {"prodId": 1, "prodQtd": 1, "prodPreco": 100.00}
          ]
         }
@@ -31,11 +31,12 @@ export default {
         return this.pedidoId;
     },
 
-    pedidoAddProd(pProdQtd, pProdId) {
+    pedidoAddProd(pProdQtd, pProdId, pProdPreco) {
         const
         lProd = {
-            "prodId" : pProdId,
-            "prodQtd": pProdQtd
+            "prodId"   : pProdId,
+            "prodQtd"  : pProdQtd,
+            "prodPreco": pProdPreco
         }
 
         this.lista[this.pedidoId].produtos.push(lProd);
@@ -44,4 +45,22 @@ export default {
     alteraIndice (pIdx) {
         this.pedidoId = pIdx-1;
     },
+
+    obtemPedido (pIdx) {
+        return this.lista[pIdx];
+    },
+
+    pedidoDelProd (pIdx) {
+        this.lista[this.pedidoId].produtos.splice(pIdx, 1);
+    },
+
+    obtemVrTotal () {
+        console.log('vrottal')
+        // let valor = 0;
+        // for (let lCont=0; lCont<this.lista[this.pedidoId].produtos.length; lCont++) {
+        //     valor = valor + this.lista[this.pedidoId].produtos.prodPreco;
+        // }
+        return 'valor';
+    }
+
 }
